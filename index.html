@@ -9,7 +9,7 @@
          ========================================== -->
          
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#ffffff">
@@ -232,45 +232,50 @@
         .hidden-section {
             display: none;
         }
+        /* Touch target fix */
+        button, a {
+            touch-action: manipulation;
+        }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen flex flex-col">
+<body class="bg-slate-50 min-h-screen flex flex-col overflow-x-hidden">
 
     <!-- LANDING PAGE CONTENT -->
     <div id="landing-page">
         
         <!-- Top Bar -->
-        <div class="bg-red-700 text-white text-[10px] md:text-xs font-bold py-2 text-center uppercase tracking-wide w-full px-2">
+        <div class="bg-red-700 text-white text-[10px] sm:text-xs font-bold py-2 text-center uppercase tracking-wide w-full px-2">
             <span data-i18n="top_bar">⚠️ HIGH DEMAND WARNING: LOW STOCK DUE TO VIRAL MEDIA ATTENTION | 62% OFF JUST TODAY</span>
         </div>
 
         <!-- Sub-header -->
-        <div class="bg-slate-100 text-xs py-2 border-b border-slate-200 w-full">
-            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
-                <div class="font-bold flex items-center gap-1 text-slate-800">
+        <div class="bg-slate-100 text-[10px] sm:text-xs py-2 border-b border-slate-200 w-full">
+            <div class="container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-center">
+                <div class="font-bold flex items-center justify-center gap-1 text-slate-800">
                     <img src="https://flagcdn.com/w20/us.png" alt="US Flag" class="h-3 w-auto" id="dynamic-region-flag">
                     <span data-i18n="sub_header_1">AMERICA’S #1 RATED MEMORY PROTOCOL</span>
                 </div>
-                <div class="flex items-center gap-3 text-[10px] md:text-xs font-semibold text-slate-600 uppercase">
-                    <span><i class="fas fa-shipping-fast text-slate-800 mr-1"></i> <span data-i18n="sub_header_2">FAST & DISCREET SHIPPING</span></span>
-                    <span><i class="fas fa-shield-alt text-slate-800 mr-1"></i> <span data-i18n="sub_header_3">60-DAY MONEY-BACK GUARANTEE</span></span>
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 font-semibold text-slate-600 uppercase">
+                    <span class="whitespace-nowrap"><i class="fas fa-shipping-fast text-slate-800 mr-1"></i> <span data-i18n="sub_header_2">FAST & DISCREET SHIPPING</span></span>
+                    <span class="hidden sm:inline">|</span>
+                    <span class="whitespace-nowrap"><i class="fas fa-shield-alt text-slate-800 mr-1"></i> <span data-i18n="sub_header_3">60-DAY MONEY-BACK GUARANTEE</span></span>
                 </div>
             </div>
         </div>
 
         <!-- Navbar -->
-        <nav class="bg-white px-4 py-4 sticky top-0 z-50 shadow-sm w-full border-b border-slate-100">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="flex items-center">
-                    <!-- Placeholder Logo for Mind Vault -->
-                    <img src="images/logo.webp" alt="Mind Vault Logo" class="h-14 md:h-20 w-auto">
+        <nav class="bg-white px-3 sm:px-4 py-3 sm:py-4 sticky top-0 z-50 shadow-sm w-full border-b border-slate-100">
+            <div class="container mx-auto flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center shrink-0">
+                    <!-- Placeholder Logo for Mind Vault: Adjusted size for mobile -->
+                    <img src="images/logo.webp" alt="Mind Vault Logo" class="h-10 sm:h-14 md:h-20 w-auto object-contain">
                 </div>
-                <div class="flex items-center gap-2">
-                    <img src="https://flagcdn.com/w20/us.png" onclick="setLanguage('en', 'us')" class="flag-btn h-4 w-auto shadow-sm rounded-[1px]" title="United States">
-                    <img src="https://flagcdn.com/w20/gb.png" onclick="setLanguage('en', 'gb')" class="flag-btn h-4 w-auto shadow-sm rounded-[1px]" title="United Kingdom">
-                    <img src="https://flagcdn.com/w20/ca.png" onclick="setLanguage('en', 'ca')" class="flag-btn h-4 w-auto shadow-sm rounded-[1px]" title="Canada">
-                    <img src="https://flagcdn.com/w20/au.png" onclick="setLanguage('en', 'au')" class="flag-btn h-4 w-auto shadow-sm rounded-[1px]" title="Australia">
-                    <img src="https://flagcdn.com/w20/nz.png" onclick="setLanguage('en', 'nz')" class="flag-btn h-4 w-auto shadow-sm rounded-[1px]" title="New Zealand">
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <img src="https://flagcdn.com/w20/us.png" onclick="setLanguage('en', 'us')" class="flag-btn h-3.5 sm:h-4 w-auto shadow-sm rounded-[1px]" title="United States">
+                    <img src="https://flagcdn.com/w20/gb.png" onclick="setLanguage('en', 'gb')" class="flag-btn h-3.5 sm:h-4 w-auto shadow-sm rounded-[1px]" title="United Kingdom">
+                    <img src="https://flagcdn.com/w20/ca.png" onclick="setLanguage('en', 'ca')" class="flag-btn h-3.5 sm:h-4 w-auto shadow-sm rounded-[1px]" title="Canada">
+                    <img src="https://flagcdn.com/w20/au.png" onclick="setLanguage('en', 'au')" class="flag-btn h-3.5 sm:h-4 w-auto shadow-sm rounded-[1px]" title="Australia">
+                    <img src="https://flagcdn.com/w20/nz.png" onclick="setLanguage('en', 'nz')" class="flag-btn h-3.5 sm:h-4 w-auto shadow-sm rounded-[1px]" title="New Zealand">
                 </div>
             </div>
         </nav>
@@ -278,88 +283,86 @@
         <!-- Hero Image Section -->
         <div class="relative w-full bg-gradient-to-b from-gray-100 to-white overflow-hidden group md:h-[600px] lg:h-[700px]">
             
-            <!-- Alterado: h-full removido no mobile, adicionado py-12 para espaçamento real -->
-            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative py-12 md:py-0 md:h-full">
+            <!-- Mobile Optimized Layout: No fixed height on mobile, removed mb-8 from empty div -->
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative py-8 md:py-0 md:h-full">
                 
-                <!-- Text Container - Adicionado mb-8 para dar espaço entre texto e imagem no mobile -->
-                <div class="relative z-20 max-w-2xl text-center md:text-left w-full md:w-1/2 mb-8 md:mb-0">
-                    <!-- Texto removido conforme solicitado -->
+                <!-- Text Container - Hidden/collapsed on mobile since content was removed -->
+                <div class="relative z-20 max-w-2xl text-center md:text-left w-full md:w-1/2 md:mb-0">
+                    <!-- Content Removed -->
                 </div>
 
-                <!-- Bottle Image - Altura fixa em pixels no mobile (h-72) para não depender do pai -->
+                <!-- Bottle Image - Adjusted height for small screens to be 100% visible without scrolling -->
                 <div class="relative w-full md:w-1/2 flex items-end justify-center md:justify-end z-10 md:h-full">
-                    <img src="images/hero.webp" class="h-72 sm:h-96 md:h-[85%] w-auto object-contain transition-transform duration-1000 group-hover:scale-105 pb-0 md:pb-10" alt="Mind Vault Bottle Supplement">
+                    <img src="images/hero.webp" class="h-60 sm:h-80 md:h-[85%] w-auto object-contain transition-transform duration-1000 group-hover:scale-105 pb-0 md:pb-10" alt="Mind Vault Bottle Supplement">
                 </div>
             </div>
-
-            <!-- Subtle Texture/Overlay if needed, currently removed for clean look -->
         </div>
 
         <!-- Content Section -->
         <div class="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
-            <div class="grid md:grid-cols-1 gap-8">
+            <div class="grid md:grid-cols-1 gap-6 md:gap-8">
                 <div>
                     <!-- Ratings -->
-                    <div class="flex flex-wrap items-center gap-2 mb-4 text-sm md:text-base">
-                        <div class="flex text-yellow-500 text-lg">
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-4 text-xs sm:text-sm md:text-base">
+                        <div class="flex text-yellow-500 text-base md:text-lg">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <span class="font-bold text-slate-900 text-lg">4.9</span>
+                        <span class="font-bold text-slate-900 text-base md:text-lg">4.9</span>
                         <span class="text-slate-300 mx-2">|</span>
-                        <span class="text-slate-600 font-medium italic" data-i18n="ratings">53,762+ Seniors Say It Gave Them “Their Life Back”</span>
+                        <span class="text-slate-600 font-medium italic text-center md:text-left" data-i18n="ratings">53,762+ Seniors Say It Gave Them “Their Life Back”</span>
                     </div>
 
                     <!-- Main Title -->
-                    <h2 class="text-2xl md:text-4xl font-black text-slate-900 leading-tight mb-6" data-i18n="main_title">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-6 text-center md:text-left" data-i18n="main_title">
                         The 60-Second Ritual That Restores Your Mind — <br class="hidden md:block">
                         <span class="text-blue-900">No Doctors, No Prescriptions, No Fear.</span>
                     </h2>
 
                     <!-- Subtitle -->
-                    <p class="text-slate-600 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl border-l-4 border-blue-900 pl-4 py-1" data-i18n="subtitle">
-                        The first AI-discovered protocol that targets the "root cause" of memory decline. Mind Vault clears the fog and reactivates dormant neural pathways, protecting your independence when traditional medicine failed.
+                    <p class="text-slate-600 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-3xl border-l-4 border-blue-900 pl-4 py-1" data-i18n="subtitle">
+                        The <strong>first AI-discovered protocol</strong> that targets the <strong>"root cause"</strong> of memory decline. Mind Vault <strong>clears the fog</strong> and <strong>reactivates dormant neural pathways</strong>, <strong>protecting your independence</strong> when traditional medicine failed.
                     </p>
 
                     <!-- Features Section -->
-                    <div class="mb-8 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                        <h3 class="text-lg font-bold text-slate-900 mb-5 uppercase tracking-wide flex items-center gap-2" data-i18n="why_love">
+                    <div class="mb-8 bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-5 uppercase tracking-wide flex items-center gap-2" data-i18n="why_love">
                             <i class="fas fa-shield-virus text-blue-600"></i> Why Seniors Trust Mind Vault
                         </h3>
                         <ul class="space-y-4 md:grid md:grid-cols-2 md:space-y-0 md:gap-y-4 md:gap-x-8">
                             <li class="flex items-start gap-3">
-                                <div class="bg-blue-100 p-1 rounded-full"><i class="fas fa-check text-blue-800 text-sm"></i></div>
-                                <span class="text-slate-700 font-semibold" data-i18n="bullet_1">Restores memory & recall instantly</span>
+                                <div class="bg-blue-100 p-1 rounded-full shrink-0"><i class="fas fa-check text-blue-800 text-sm"></i></div>
+                                <span class="text-slate-700 font-semibold text-sm sm:text-base" data-i18n="bullet_1">Restores memory & recall instantly</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <div class="bg-blue-100 p-1 rounded-full"><i class="fas fa-check text-blue-800 text-sm"></i></div>
-                                <span class="text-slate-700 font-semibold" data-i18n="bullet_2">Clears "Brain Fog" & mental confusion</span>
+                                <div class="bg-blue-100 p-1 rounded-full shrink-0"><i class="fas fa-check text-blue-800 text-sm"></i></div>
+                                <span class="text-slate-700 font-semibold text-sm sm:text-base" data-i18n="bullet_2">Clears "Brain Fog" & mental confusion</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <div class="bg-blue-100 p-1 rounded-full"><i class="fas fa-check text-blue-800 text-sm"></i></div>
-                                <span class="text-slate-700 font-semibold" data-i18n="bullet_3">AI-Calculated "Golden Ratio" formula</span>
+                                <div class="bg-blue-100 p-1 rounded-full shrink-0"><i class="fas fa-check text-blue-800 text-sm"></i></div>
+                                <span class="text-slate-700 font-semibold text-sm sm:text-base" data-i18n="bullet_3">AI-Calculated "Golden Ratio" formula</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <div class="bg-blue-100 p-1 rounded-full"><i class="fas fa-check text-blue-800 text-sm"></i></div>
-                                <span class="text-slate-700 font-semibold" data-i18n="bullet_4">Protects your independence & dignity</span>
+                                <div class="bg-blue-100 p-1 rounded-full shrink-0"><i class="fas fa-check text-blue-800 text-sm"></i></div>
+                                <span class="text-slate-700 font-semibold text-sm sm:text-base" data-i18n="bullet_4">Protects your independence & dignity</span>
                             </li>
                             <li class="flex items-start gap-3 md:col-span-2">
-                                <div class="bg-blue-100 p-1 rounded-full"><i class="fas fa-check text-blue-800 text-sm"></i></div>
-                                <span class="text-slate-700 font-semibold" data-i18n="bullet_5">100% Natural & Side-effect free</span>
+                                <div class="bg-blue-100 p-1 rounded-full shrink-0"><i class="fas fa-check text-blue-800 text-sm"></i></div>
+                                <span class="text-slate-700 font-semibold text-sm sm:text-base" data-i18n="bullet_5">100% Natural & Side-effect free</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- CTA SECTION -->
                     <div class="w-full mb-8">
-                        <button onclick="document.getElementById('country-selection').scrollIntoView({ behavior: 'smooth' })" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold text-xl md:text-2xl py-5 rounded-lg shadow-lg hover:shadow-2xl transform transition hover:-translate-y-1 uppercase tracking-wider mb-4 border-b-4 border-blue-950">
+                        <button onclick="document.getElementById('country-selection').scrollIntoView({ behavior: 'smooth' })" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold text-lg sm:text-xl md:text-2xl py-4 sm:py-5 rounded-lg shadow-lg hover:shadow-2xl transform transition hover:-translate-y-1 uppercase tracking-wider mb-4 border-b-4 border-blue-950 active:scale-95 active:border-b-0">
                             <span data-i18n="cta_button">CHECK AVAILABILITY & GET 62% OFF</span>
                         </button>
                         
-                        <div class="flex items-center justify-center gap-3 text-slate-500 text-xs md:text-sm font-medium">
+                        <div class="flex items-center justify-center gap-2 sm:gap-3 text-slate-500 text-[10px] sm:text-xs md:text-sm font-medium">
                             <i class="fas fa-lock text-slate-400"></i>
                             <span class="text-center" data-i18n="cta_guarantee">Try it risk-free with a 60-Day Money Back Guarantee!</span>
                         </div>
@@ -368,7 +371,7 @@
                     <!-- Social Proof Box -->
                     <div class="border border-red-100 bg-red-50/50 rounded-xl p-4 shadow-sm md:max-w-lg mb-10 mx-auto md:mx-0">
                         <div class="flex items-center justify-center gap-3 pb-3 border-b border-red-100 mb-3">
-                            <div class="flex -space-x-3">
+                            <div class="flex -space-x-3 shrink-0">
                                 <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/100?img=11" alt="">
                                 <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/100?img=5" alt="">
                                 <img class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/100?img=3" alt="">
@@ -376,9 +379,9 @@
                                     +8k
                                 </div>
                             </div>
-                            <span class="text-sm font-bold text-slate-800 leading-tight" data-i18n="social_proof">8,000+ Families: <br><span class="font-normal italic text-slate-600">“We finally got our grandma back. She remembers everything now.”</span></span>
+                            <span class="text-xs sm:text-sm font-bold text-slate-800 leading-tight" data-i18n="social_proof">8,000+ Families: <br><span class="font-normal italic text-slate-600">“We finally got our grandma back. She remembers everything now.”</span></span>
                         </div>
-                        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm font-bold">
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold">
                             <div class="flex items-center gap-2 text-red-700 animate-pulse">
                                 <i class="fas fa-circle text-[8px]"></i>
                                 <span data-i18n="stock">Low Stock</span>
@@ -395,58 +398,58 @@
         </div>
 
         <!-- Country Selection Section (SCROLL TARGET) -->
-        <div id="country-selection" class="w-full bg-white border-t border-slate-200 py-16 md:py-24">
+        <div id="country-selection" class="w-full bg-white border-t border-slate-200 py-12 md:py-24">
             <div class="container mx-auto px-4 text-center max-w-5xl">
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight serif-font" data-i18n="select_title">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight serif-font" data-i18n="select_title">
                     Select Your Country to Check Local Inventory
                 </h2>
-                <p class="text-slate-500 text-base md:text-lg font-medium leading-relaxed mb-12 max-w-3xl mx-auto" data-i18n="select_subtitle">
+                <p class="text-slate-500 text-sm sm:text-base md:text-lg font-medium leading-relaxed mb-8 md:mb-12 max-w-3xl mx-auto" data-i18n="select_subtitle">
                     Due to viral demand and ingredient scarcity, stock is critical. Click on your flag to secure your bottles from our nearest warehouse with fast shipping.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     
                     <!-- United States -->
-                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
-                        <img src="https://flagcdn.com/w80/us.png" alt="USA" class="w-12 h-auto rounded shadow-sm object-cover">
+                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
+                        <img src="https://flagcdn.com/w80/us.png" alt="USA" class="w-10 sm:w-12 h-auto rounded shadow-sm object-cover shrink-0">
                         <div class="text-left">
-                            <span class="block font-bold text-slate-900 text-lg group-hover:text-blue-800 transition-colors">United States</span>
-                            <span class="text-xs text-green-600 font-bold"><i class="fas fa-check-circle"></i> Priority Shipping Available</span>
+                            <span class="block font-bold text-slate-900 text-base sm:text-lg group-hover:text-blue-800 transition-colors">United States</span>
+                            <span class="text-[10px] sm:text-xs text-green-600 font-bold"><i class="fas fa-check-circle"></i> Priority Shipping Available</span>
                         </div>
                     </a>
 
                     <!-- United Kingdom -->
-                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
-                        <img src="https://flagcdn.com/w80/gb.png" alt="UK" class="w-12 h-auto rounded shadow-sm object-cover">
+                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
+                        <img src="https://flagcdn.com/w80/gb.png" alt="UK" class="w-10 sm:w-12 h-auto rounded shadow-sm object-cover shrink-0">
                         <div class="text-left">
-                            <span class="block font-bold text-slate-900 text-lg group-hover:text-blue-800 transition-colors">United Kingdom</span>
-                            <span class="text-xs text-orange-600 font-bold"><i class="fas fa-exclamation-circle"></i> Limited Stock Available</span>
+                            <span class="block font-bold text-slate-900 text-base sm:text-lg group-hover:text-blue-800 transition-colors">United Kingdom</span>
+                            <span class="text-[10px] sm:text-xs text-orange-600 font-bold"><i class="fas fa-exclamation-circle"></i> Limited Stock Available</span>
                         </div>
                     </a>
 
                     <!-- Canada -->
-                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
-                        <img src="https://flagcdn.com/w80/ca.png" alt="Canada" class="w-12 h-auto rounded shadow-sm object-cover">
+                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
+                        <img src="https://flagcdn.com/w80/ca.png" alt="Canada" class="w-10 sm:w-12 h-auto rounded shadow-sm object-cover shrink-0">
                         <div class="text-left">
-                            <span class="block font-bold text-slate-900 text-lg group-hover:text-blue-800 transition-colors">Canada</span>
-                            <span class="text-xs text-green-600 font-bold"><i class="fas fa-check-circle"></i> Fast Shipping Available</span>
+                            <span class="block font-bold text-slate-900 text-base sm:text-lg group-hover:text-blue-800 transition-colors">Canada</span>
+                            <span class="text-[10px] sm:text-xs text-green-600 font-bold"><i class="fas fa-check-circle"></i> Fast Shipping Available</span>
                         </div>
                     </a>
 
                     <!-- Australia -->
-                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
-                        <img src="https://flagcdn.com/w80/au.png" alt="Australia" class="w-12 h-auto rounded shadow-sm object-cover">
+                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
+                        <img src="https://flagcdn.com/w80/au.png" alt="Australia" class="w-10 sm:w-12 h-auto rounded shadow-sm object-cover shrink-0">
                         <div class="text-left">
-                            <span class="block font-bold text-slate-900 text-lg group-hover:text-blue-800 transition-colors">Australia</span>
-                            <span class="text-xs text-blue-600 font-bold"><i class="fas fa-star"></i> Exclusive Deal Available</span>
+                            <span class="block font-bold text-slate-900 text-base sm:text-lg group-hover:text-blue-800 transition-colors">Australia</span>
+                            <span class="text-[10px] sm:text-xs text-blue-600 font-bold"><i class="fas fa-star"></i> Exclusive Deal Available</span>
                         </div>
                     </a>
 
                     <!-- New Zealand -->
-                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
-                        <img src="https://flagcdn.com/w80/nz.png" alt="New Zealand" class="w-12 h-auto rounded shadow-sm object-cover">
+                    <a href="https://mwebaro.com/11769/415/7/?" class="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-600 transition-all duration-300 flex items-center gap-4 no-underline hover:-translate-y-1">
+                        <img src="https://flagcdn.com/w80/nz.png" alt="New Zealand" class="w-10 sm:w-12 h-auto rounded shadow-sm object-cover shrink-0">
                         <div class="text-left">
-                            <span class="block font-bold text-slate-900 text-lg group-hover:text-blue-800 transition-colors">New Zealand</span>
-                            <span class="text-xs text-red-600 font-bold"><i class="fas fa-exclamation-triangle"></i> Low Stock Warning</span>
+                            <span class="block font-bold text-slate-900 text-base sm:text-lg group-hover:text-blue-800 transition-colors">New Zealand</span>
+                            <span class="text-[10px] sm:text-xs text-red-600 font-bold"><i class="fas fa-exclamation-triangle"></i> Low Stock Warning</span>
                         </div>
                     </a>
 
@@ -455,31 +458,31 @@
         </div>
         
         <!-- Footer Section -->
-        <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8 text-slate-400">
+        <footer class="bg-slate-900 border-t border-slate-800 pt-12 md:pt-16 pb-8 text-slate-400">
             <div class="container mx-auto px-4 max-w-5xl">
                 
-                <div class="flex flex-col justify-center items-center gap-10 mb-10">
+                <div class="flex flex-col justify-center items-center gap-8 md:gap-10 mb-10">
                     <div class="flex flex-col items-center gap-4 text-center">
-                        <img src="images/logo.webp" alt="Mind Vault Logo" class="h-8 w-auto opacity-90">
+                        <img src="images/logo.webp" alt="Mind Vault Logo" class="h-6 sm:h-8 w-auto opacity-90">
                         
-                        <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto italic" data-i18n="footer_text">
+                        <p class="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl mx-auto italic px-4" data-i18n="footer_text">
                             "We believe aging shouldn't mean losing who you are. Mind Vault is dedicated to preserving your memories, your dignity, and your independence against the odds. A mission to save minds, one bottle at a time."
                         </p>
                     </div>
 
                     <!-- CUSTOMER CARE SECTION -->
                     <div class="flex flex-col items-center gap-6">
-                        <h3 class="text-sm font-bold text-white uppercase tracking-widest" data-i18n="footer_care_title">CUSTOMER CARE</h3>
-                        <div class="flex flex-wrap justify-center gap-6">
-                            <a href="mailto:support@getmindvault.com" class="flex items-center gap-2 text-slate-300 hover:text-white transition font-medium text-sm group">
+                        <h3 class="text-xs sm:text-sm font-bold text-white uppercase tracking-widest" data-i18n="footer_care_title">CUSTOMER CARE</h3>
+                        <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+                            <a href="mailto:support@getmindvault.com" class="flex items-center gap-2 text-slate-300 hover:text-white transition font-medium text-xs sm:text-sm group">
                                 <i class="fas fa-envelope text-blue-500"></i>
                                 <span data-i18n="footer_email">Send Us An Email</span>
                             </a>
-                            <div class="flex items-center gap-2 text-slate-300 font-medium text-sm">
+                            <div class="flex items-center gap-2 text-slate-300 font-medium text-xs sm:text-sm">
                                 <i class="fas fa-headset text-blue-500"></i>
                                 <span data-i18n="footer_chat">24/7 VIP Support</span>
                             </div>
-                            <a href="tel:+18001234567" class="flex items-center gap-2 text-slate-300 hover:text-white transition font-medium text-sm">
+                            <a href="tel:+18001234567" class="flex items-center gap-2 text-slate-300 hover:text-white transition font-medium text-xs sm:text-sm">
                                 <i class="fas fa-phone-alt text-blue-500"></i>
                                 <span>+1 (800) 123-4567</span>
                             </a>
@@ -487,9 +490,9 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-slate-800 pt-8 text-xs text-slate-500">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-slate-800 pt-8 text-[10px] sm:text-xs text-slate-500">
                     <p>© 2025 Mind Vault Research. All rights reserved.</p>
-                    <div class="flex items-center gap-6">
+                    <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
                         <button onclick="showPolicy('privacy')" class="hover:text-slate-300 transition-colors">Privacy Policy</button>
                         <button onclick="showPolicy('terms')" class="hover:text-slate-300 transition-colors">Terms of Service</button>
                         <button class="hover:text-slate-300 transition-colors">Scientific References</button>
@@ -497,14 +500,14 @@
                 </div>
                 
                 <div class="flex flex-col items-center gap-4 mt-8 pt-8 border-t border-slate-800">
-                    <span class="text-xs text-slate-500 font-bold uppercase tracking-wide flex items-center gap-2">
+                    <span class="text-[10px] sm:text-xs text-slate-500 font-bold uppercase tracking-wide flex items-center gap-2">
                         <i class="fas fa-lock"></i> Guaranteed Safe Checkout (SSL Secure)
                     </span>
                     <div class="flex items-center gap-2 grayscale opacity-50 hover:opacity-100 transition-opacity">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard" class="h-6 w-auto">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-6 w-auto">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-6 w-auto">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="Amex" class="h-6 w-auto">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard" class="h-5 sm:h-6 w-auto">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-5 sm:h-6 w-auto">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-5 sm:h-6 w-auto">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="Amex" class="h-5 sm:h-6 w-auto">
                     </div>
                 </div>
             </div>
@@ -585,7 +588,7 @@
                 hero_title: "#1 Natural Protocol for<br><span class='text-blue-200'>Crystal Clear</span><br>Memory",
                 ratings: "53,762+ Seniors Say It Gave Them “Their Life Back”",
                 main_title: "The 60-Second Ritual That Restores Your Mind — <br class='hidden md:block'><span class='text-blue-900'>No Doctors, No Prescriptions, No Fear.</span>",
-                subtitle: "The first AI-discovered protocol that targets the 'root cause' of memory decline. Mind Vault clears the fog and reactivates dormant neural pathways, protecting your independence when traditional medicine failed.",
+                subtitle: "The <strong>first AI-discovered protocol</strong> that targets the <strong>\"root cause\"</strong> of memory decline. Mind Vault <strong>clears the fog</strong> and <strong>reactivates dormant neural pathways</strong>, <strong>protecting your independence</strong> when traditional medicine failed.",
                 why_love: "<i class='fas fa-shield-virus text-blue-600'></i> Why Seniors Trust Mind Vault",
                 bullet_1: "Restores memory & recall instantly",
                 bullet_2: "Clears 'Brain Fog' & mental confusion",
