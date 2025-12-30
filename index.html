@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>    
     <script defer src="https://cdn.raldoeira.com/code/8300-4a92d29e-44cb-4205-b58b-1ef3517db11a"></script>
     <!-- ==========================================
          ADVANCED SEO & PERFORMANCE OPTIMIZATION
@@ -276,20 +276,23 @@
         </nav>
 
         <!-- Hero Image Section -->
-        <div class="relative w-full h-[450px] md:h-[550px] lg:h-[650px] bg-gradient-to-b from-slate-900 to-blue-900 overflow-hidden group">
-            <!-- Happy Senior Image -->
-            <img src="images/hero.webp" class="absolute inset-0 w-full h-full object-cover object-top opacity-90 transition-transform duration-1000 group-hover:scale-105" alt="Happy senior woman with clarity">
+        <div class="relative w-full bg-gradient-to-b from-gray-100 to-white overflow-hidden group md:h-[600px] lg:h-[700px]">
             
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/30"></div>
-            <div class="absolute inset-0 container mx-auto px-4 pointer-events-none flex items-start pt-12 md:pt-20">
-                <div class="relative max-w-2xl">
-                    <h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-black leading-tight hero-shadow" data-i18n="hero_title">
-                        #1 Natural Protocol for<br>
-                        <span class="text-blue-200">Crystal Clear</span><br>
-                        Memory
-                    </h1>
+            <!-- Alterado: h-full removido no mobile, adicionado py-12 para espaçamento real -->
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative py-12 md:py-0 md:h-full">
+                
+                <!-- Text Container - Adicionado mb-8 para dar espaço entre texto e imagem no mobile -->
+                <div class="relative z-20 max-w-2xl text-center md:text-left w-full md:w-1/2 mb-8 md:mb-0">
+                    <!-- Texto removido conforme solicitado -->
+                </div>
+
+                <!-- Bottle Image - Altura fixa em pixels no mobile (h-72) para não depender do pai -->
+                <div class="relative w-full md:w-1/2 flex items-end justify-center md:justify-end z-10 md:h-full">
+                    <img src="images/hero.webp" class="h-72 sm:h-96 md:h-[85%] w-auto object-contain transition-transform duration-1000 group-hover:scale-105 pb-0 md:pb-10" alt="Mind Vault Bottle Supplement">
                 </div>
             </div>
+
+            <!-- Subtle Texture/Overlay if needed, currently removed for clean look -->
         </div>
 
         <!-- Content Section -->
@@ -661,4 +664,3 @@
     </script>
 </body>
 </html>
-
